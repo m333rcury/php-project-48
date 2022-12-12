@@ -1,12 +1,12 @@
 {
     "name": "hexlet/code",
-    "description": "Difference calculator by VK and Hexlet",
-    "license": "MIT",
+    "description": "Вычислитель отличий",
+    "license": "QBS",
     "authors": [
         {
-            "name": "Vladimir Kazakov",
-            "email": "belsynth@gmail.com",
-            "role": "Developer"
+            "name": "Daniyar Mukhametkaliev",
+            "email": "m333rcury@gmail.com",
+            "role": "tech"
         }
     ],
     "bin": [
