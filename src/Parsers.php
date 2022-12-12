@@ -5,12 +5,6 @@ namespace Differ\Parsers;
 use Exception;
 use Symfony\Component\Yaml\Yaml;
 
-/**
- * @param string $dataType
- * @param string $content
- * @return object
- * @throws Exception
- */
 function parse(string $dataType, string $content): object
 {
     switch ($dataType) {

@@ -6,11 +6,6 @@ use Exception;
 
 use function Functional\flat_map;
 
-/**
- * @param array $diffTree
- * @return string
- * @throws Exception
- */
 function format(array $diffTree): string
 {
     $result = array_filter(makePlain($diffTree));
@@ -18,12 +13,6 @@ function format(array $diffTree): string
     return implode("\n", $result);
 }
 
-/**
- * @param array $diffTree
- * @param string $parentKey
- * @return array
- * @throws Exception
- */
 function makePlain(array $diffTree, string $parentKey = ''): array
 {
     return flat_map(
@@ -53,10 +42,6 @@ function makePlain(array $diffTree, string $parentKey = ''): array
     );
 }
 
-/**
- * @param mixed $value
- * @return string
- */
 function toString($value): string
 {
     if (is_bool($value)) {

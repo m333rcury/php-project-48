@@ -8,13 +8,6 @@ use function Differ\Parsers\parse;
 use function Differ\Formatters\format;
 use function Functional\sort;
 
-/**
- * @param string $pathToFirstFile
- * @param string $pathToSecondFile
- * @param string $formatType
- * @return string
- * @throws Exception
- */
 function genDiff(string $pathToFirstFile, string $pathToSecondFile, string $formatType = 'stylish'): string
 {
     $structure1 = parse(getFileExtension($pathToFirstFile), getFileContent($pathToFirstFile));
@@ -24,11 +17,6 @@ function genDiff(string $pathToFirstFile, string $pathToSecondFile, string $form
     return format($diffTree, $formatType);
 }
 
-/**
- * @param object $structure1
- * @param object $structure2
- * @return array
- */
 function getDiffTree(object $structure1, object $structure2): array
 {
     $keys = array_keys(array_merge((array) $structure1, (array) $structure2));
@@ -68,11 +56,6 @@ function getDiffTree(object $structure1, object $structure2): array
     );
 }
 
-/**
- * @param string $path
- * @return string
- * @throws Exception
- */
 function getFileExtension(string $path): string
 {
     if (file_exists($path)) {
@@ -84,11 +67,6 @@ function getFileExtension(string $path): string
     return $extension;
 }
 
-/**
- * @param string $path
- * @return string
- * @throws Exception
- */
 function getFileContent(string $path): string
 {
     if (is_readable($path)) {

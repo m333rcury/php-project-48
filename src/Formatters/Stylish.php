@@ -4,11 +4,6 @@ namespace Differ\Formatters\Stylish;
 
 use Exception;
 
-/**
- * @param array $diffTree
- * @return string
- * @throws Exception
- */
 function format(array $diffTree): string
 {
     $result = makeStylish($diffTree);
@@ -16,12 +11,6 @@ function format(array $diffTree): string
     return "{\n" . $result . "\n}";
 }
 
-/**
- * @param array $diffTree
- * @param int $depth
- * @return string
- * @throws Exception
- */
 function makeStylish(array $diffTree, int $depth = 1): string
 {
     $result = array_map(
@@ -63,11 +52,6 @@ function makeStylish(array $diffTree, int $depth = 1): string
     return implode("\n", $result);
 }
 
-/**
- * @param mixed $value
- * @param int $depth
- * @return string
- */
 function stylishNodeValue($value, int $depth): string
 {
     if (!is_object($value)) {
@@ -88,10 +72,6 @@ function stylishNodeValue($value, int $depth): string
     return "{\n" . implode("\n", $result) . "\n{$endIndent}}";
 }
 
-/**
- * @param mixed $value
- * @return string
- */
 function toString($value): string
 {
     if (is_bool($value)) {
@@ -105,20 +85,11 @@ function toString($value): string
     return $value;
 }
 
-/**
- * @param int $depth
- * @return string
- */
 function getSmallIndent(int $depth): string
 {
     return getIndent($depth, 2);
 }
 
-/**
- * @param int $depth
- * @param int $shift
- * @return string
- */
 function getIndent(int $depth = 1, int $shift = 0): string
 {
     $baseIndentSize = 4;

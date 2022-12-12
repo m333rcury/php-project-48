@@ -4,12 +4,6 @@ namespace Differ\Formatters;
 
 use Exception;
 
-/**
- * @param array $diffTree
- * @param string $type
- * @return string
- * @throws Exception
- */
 function format(array $diffTree, string $type): string
 {
     switch ($type) {
