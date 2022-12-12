@@ -52,7 +52,7 @@ function makeStylish(array $diffTree, int $depth = 1): string
     return implode("\n", $result);
 }
 
-function stylishNodeValue($value, int $depth): string
+function stylishNodeValue(mixed $value, int $depth): string
 {
     if (!is_object($value)) {
         return toString($value);
@@ -72,7 +72,7 @@ function stylishNodeValue($value, int $depth): string
     return "{\n" . implode("\n", $result) . "\n{$endIndent}}";
 }
 
-function toString($value): string
+function toString(mixed $value): string
 {
     if (is_bool($value)) {
         return $value ? 'true' : 'false';
