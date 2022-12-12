@@ -9,6 +9,7 @@
             "role": "tech"
         }
     ],
+    "minimum-stability": "stable",
     "bin": [
         "bin/gendiff"
     ],
