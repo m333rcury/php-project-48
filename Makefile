@@ -12,3 +12,6 @@ test:
 
 test-coverage:
 	composer run-script test-coverage
+
+gendiff:
+	./bin/gendiff

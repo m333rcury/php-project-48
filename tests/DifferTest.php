@@ -9,28 +9,16 @@ use function Differ\Differ\genDiff;
 
 class DifferTest extends TestCase
 {
-
-    /**
-     * @param string $fileName
-     * @return string
-     */
     public function getFixturePath(string $fileName): string
     {
         return __DIR__ . '/fixtures/' . $fileName;
     }
 
-    /**
-     * @param string $fileName
-     * @return string
-     */
     public function getFixtureContent(string $fileName): string
     {
         return file_get_contents($this->getFixturePath($fileName));
     }
 
-    /**
-     * @return array
-     */
     public function additionProvider(): array
     {
         return [
@@ -83,14 +71,6 @@ class DifferTest extends TestCase
         ];
     }
 
-    /**
-     * @param string $expected
-     * @param string $pathToFirstFile
-     * @param string $pathToSecondFile
-     * @param string $formatType
-     * @throws Exception
-     * @dataProvider additionProvider
-     */
     public function testGenDiff(
         string $expected,
         string $pathToFirstFile,
